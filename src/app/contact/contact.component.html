@@ -1,0 +1,86 @@
+<!-- ✅ Hero Header -->
+<section class="contact-hero text-center text-white d-flex align-items-center justify-content-center">
+  <div>
+    <h1 class="display-5 fw-bold">Get in Touch</h1>
+    <p class="lead">We’d love to hear from you. Let’s start a conversation!</p>
+  </div>
+</section>
+
+<!-- ✅ Contact Form Section -->
+<section class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow border-0 p-4">
+        <h3 class="text-center mb-4 fw-bold">Contact Us</h3>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <!-- Name -->
+          <div class="mb-3">
+            <label for="name" class="form-label fw-semibold">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              formControlName="name"
+              placeholder="Enter your name"
+            />
+            <div class="text-danger mt-1" *ngIf="name.invalid && name.touched">
+              Name is required.
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              formControlName="email"
+              placeholder="Enter your email"
+            />
+            <div class="text-danger mt-1" *ngIf="email.invalid && email.touched">
+              Please enter a valid email.
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="mb-3">
+            <label for="message" class="form-label fw-semibold">Message</label>
+            <textarea
+              id="message"
+              rows="5"
+              class="form-control"
+              formControlName="message"
+              placeholder="Write your message here..."
+            ></textarea>
+            <div class="text-danger mt-1" *ngIf="message.invalid && message.touched">
+              Message cannot be empty.
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg"
+              [disabled]="contactForm.invalid"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        <!-- ✅ Success Message -->
+        <div *ngIf="submitted" class="alert alert-success mt-4 text-center">
+          Thank you for contacting us! We’ll get back to you soon.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  <small>© 2025 NavCodeTech. All rights reserved.</small>
+</footer>

@@ -1,0 +1,14 @@
+.contact-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://picsum.photos/1600/500?contact") center/cover no-repeat;
+  height: 50vh;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

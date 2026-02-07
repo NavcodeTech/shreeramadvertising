@@ -1,0 +1,191 @@
+<!-- ✅ Hero Section -->
+<section class="hero text-center text-white d-flex align-items-center justify-content-center">
+  <div>
+    <h1 class="display-4 fw-bold">Welcome to Shree Ram Advertising</h1>
+    <p class="lead mb-4">Your one-stop platform for outdoor and indoor adevertising</p>
+    <button class="btn btn-primary btn-lg" (click)="contactUs()">Contact us</button>
+  </div>
+</section>
+
+<!-- ✅ Card Carousel Section -->
+<div id="cardCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+  <h6 class="display-4 fw-bold section-title text-center">Our Highlights</h6>
+  <div class="carousel-inner container">
+    <div class="carousel-item active">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card shadow border-0">
+            <img src="https://picsum.photos/400/250?1" class="card-img-top" alt="..." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Brand Activity</h5>
+              <p class="card-text">Creative and effective branding solutions for your business.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+          <div class="card shadow border-0">
+            <img src="https://picsum.photos/400/250?2" class="card-img-top" alt="..." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Modern Advertising</h5>
+              <p class="card-text">Beautiful and impactful advertising solutions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-none d-lg-block">
+          <div class="card shadow border-0">
+            <img src="https://picsum.photos/400/250?3" class="card-img-top" alt="..." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Attractive Branding</h5>
+              <p class="card-text">Eye-catching and memorable branding solutions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card shadow border-0">
+            <img src="https://picsum.photos/400/250?4" class="card-img-top" alt="..." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Message Delivering to audience</h5>
+              <p class="card-text">We advertise the way that delivers messages effectively to your target audience.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+          <div class="card shadow border-0">
+            <img src="https://picsum.photos/400/250?5" class="card-img-top" alt="..." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Customizable</h5>
+              <p class="card-text">Easily customizable to meet your specific client needs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-none d-lg-block">
+          <div class="card shadow border-0">
+            <img src="https://picsum.photos/400/250?6" class="card-img-top" alt="..." />
+            <div class="card-body text-center">
+              <h5 class="card-title">24/7 Support</h5>
+              <p class="card-text">We’re here whenever you need help.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<section class="services-section">
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-subtitle">
+    End-to-end outdoor & on-ground branding solutions for maximum visibility
+  </p>
+
+  <div class="services-grid">
+    <div class="service-card" *ngFor="let service of services">
+      <i class="fas" [ngClass]="service.icon"></i>
+      <h4>{{ service.title }}</h4>
+    </div>
+  </div>
+</section>
+
+<section class="clients-section">
+
+  <!-- Stats -->
+  <div class="stats-container">
+    <div class="stat-box" *ngFor="let stat of stats">
+      <h3>{{ stat.value }}</h3>
+      <p>{{ stat.label }}</p>
+    </div>
+  </div>
+
+  <!-- Clients -->
+  <h2 class="section-title">Clients We’ve Worked For</h2>
+  <p class="section-subtitle">
+    Trusted by leading brands across industries
+  </p>
+
+  <div class="clients-grid">
+    <div class="client-logo" *ngFor="let client of clients">
+      <img
+        src="assets/img/clients/{{ client.logo }}"
+        alt="{{ client.name }}"
+      />
+    </div>
+  </div>
+
+  <!-- Activity Images -->
+  <div class="activity-grid">
+    <img
+      *ngFor="let img of activityImages"
+      src="assets/activities/{{ img }}"
+      alt="Branding Activity"
+    />
+  </div>
+
+</section>
+
+<section class="states-section">
+
+  <h2 class="section-title">States We Operate In</h2>
+  <p class="section-subtitle">
+    Delivering impactful outdoor and on-ground branding across multiple states
+  </p>
+
+  <div class="states-grid">
+    <div class="state-card" *ngFor="let state of states">
+      <img
+        src="{{ state.image }}"
+        alt="{{ state.name }}"
+      />
+      <h4>{{ state.name }}</h4>
+    </div>
+  </div>
+
+</section>
+
+<!-- ✅ Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  <div class="footer-container">
+
+    <!-- Contact -->
+    <div class="footer-box">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Patna, Bihar, India</p>
+      <p><i class="fas fa-phone"></i> +91 8292643819</p>
+      <p><i class="fas fa-envelope"></i> sachinkumar1t10@gmail.com</p>
+    </div>
+
+    <!-- Map -->
+    <div class="footer-box">
+      <h4>Our Location</h4>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28789.74735513202!2d85.10910950337002!3d25.581033253338433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed59262550a3ed%3A0xfc9a99c5b53624fb!2sImpact%20Library!5e0!3m2!1sen!2sin!4v1770481140465!5m2!1sen!2sin"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/14UCU58pDAG/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/son_of_raja_dasharath?utm_source=qr&igsh=N3J6cjVpN3RydXhx"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=sachin-kumar-997318240"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <small>© 2025 NavCodeTech. All rights reserved.</small>
+</footer>
